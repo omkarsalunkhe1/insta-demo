@@ -1,0 +1,45 @@
+ion-content,
+.darkBackground {
+    --background: #000;
+    --color: #fff;
+}
+
+ion-label {
+    font-size: 13px !important;
+}
+
+.profileIco {
+    margin-right: 10px;
+}
+
+ion-item {
+    --padding-start: 10px;
+    --background: #000;
+    --color: #fff;
+}
+
+.list-md {
+    padding: 0px;
+}
+
+.darkBackground {
+    margin: 0px !important;
+    border-radius: 0 !important;
+}
+
+.displayInline {
+    display: inline-block;
+}
+
+.cardHeader {
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+}
+
+.floatRight {
+    float: right;
+}
+
+.subTitle {
+    font-size: 10px;
+}

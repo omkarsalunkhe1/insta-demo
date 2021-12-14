@@ -1,0 +1,45 @@
+<app-hader></app-hader>
+
+<ion-content [fullscreen]="true">
+    <ion-list *ngIf="data">
+        <ion-card *ngFor="let user of data" class="darkBackground">
+            <ion-item>
+                <ion-avatar class="profileIco">
+                    <img [src]="user.picture.thumbnail">
+                </ion-avatar>
+                <ion-label>
+                    {{user.name.title}}. {{user.name.first}} {{user.name.last}}
+                    <ion-card-subtitle class="subTitle">{{user.location.city}}, {{user.location.country}}</ion-card-subtitle>
+                </ion-label>
+            </ion-item>
+            <ion-img [src]="user.picture.large"></ion-img>
+            <ion-card-header class="cardHeader">
+                <div class="displayInline">
+                    <ion-tab-button>
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </ion-tab-button>
+                </div>
+                <div class="displayInline">
+                    <ion-tab-button>
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                    </ion-tab-button>
+                </div>
+                <div class="displayInline">
+                    <ion-tab-button>
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                    </ion-tab-button>
+                </div>
+                <div class="displayInline floatRight">
+                    <ion-tab-button>
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </ion-tab-button>
+                </div>
+            </ion-card-header>
+        </ion-card>
+    </ion-list>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
