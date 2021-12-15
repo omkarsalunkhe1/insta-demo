@@ -27,4 +27,12 @@ export class Tab1Page {
     });
   }
 
+  addLikes(index: number) {
+    if(this.data[index].likes) {
+      this.data[index].likes += 1;
+    } else {
+      this.data[index].likes = 1;
+    }
+  }
+
 }

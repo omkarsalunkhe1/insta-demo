@@ -2,7 +2,7 @@
 
 <ion-content [fullscreen]="true">
     <ion-list *ngIf="data">
-        <ion-card *ngFor="let user of data" class="darkBackground">
+        <ion-card *ngFor="let user of data; let i = index;" class="darkBackground">
             <ion-item>
                 <ion-avatar class="profileIco">
                     <img [src]="user.picture.thumbnail">
@@ -15,7 +15,7 @@
             <ion-img [src]="user.picture.large"></ion-img>
             <ion-card-header class="cardHeader">
                 <div class="displayInline">
-                    <ion-tab-button>
+                    <ion-tab-button (click)="addLikes(i)">
                         <ion-icon name="heart-outline"></ion-icon>
                     </ion-tab-button>
                 </div>
@@ -35,6 +35,9 @@
                     </ion-tab-button>
                 </div>
             </ion-card-header>
+            <ion-item class="lineItem">
+                <span *ngIf="user.likes">{{user.likes}} Like</span>
+            </ion-item>
         </ion-card>
     </ion-list>
 
