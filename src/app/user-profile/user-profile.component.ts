@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../services/http-service.service';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.scss'],
 })
-export class Tab2Page {
-  records = 100;
+export class UserProfileComponent implements OnInit {
+  records = 50;
   counter = 1;
   data: any = [];
 
@@ -16,5 +16,7 @@ export class Tab2Page {
       this.data = response.results;
     });
   }
+
+  ngOnInit() {}
 
 }

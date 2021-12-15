@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            User Profile
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="3">
+                <ion-avatar>
+                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                </ion-avatar>
+            </ion-col>
+            <ion-col class="profileTags" size="3">
+                789<br><span>Posts</span>
+            </ion-col>
+            <ion-col class="profileTags" size="3">
+                7.2M<br><span>Followers</span>
+            </ion-col>
+            <ion-col class="profileTags" size="3">
+                184<br><span>Following</span>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="profileDetails" size="12">
+                <div>Category | Category | Category</div>
+                <div>Sample Details</div>
+                <div>More Details @sampleProfile</div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="profileDetails" size="5">
+                <ion-button class="profileButtons">
+                    Following
+                </ion-button>
+            </ion-col>
+            <ion-col class="profileDetails" size="5">
+                <ion-button class="profileButtons">
+                    Message
+                </ion-button>
+            </ion-col>
+            <ion-col class="profileDetails" size="2">
+                <ion-button class="profileButtons">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="data">
+        <ion-row>
+            <ion-col *ngFor="let rec of data" size="4">
+                <img [src]="rec.picture.large">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

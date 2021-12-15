@@ -1,0 +1,37 @@
+ion-content,
+.darkBackground {
+    --background: #000;
+    --color: #fff;
+}
+
+ion-toolbar {
+    --background: #000;
+    --color: #fff;
+    border-bottom: 1px solid rgb(90, 89, 89);
+}
+
+ion-title {
+    font-size: 15px;
+}
+
+.profileTags {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.profileDetails {
+    font-size: 12px;
+}
+
+.profileTags span {
+    font-size: 12px;
+}
+
+.profileButtons {
+    padding: 0 !important;
+    font-size: 12px;
+    border: 1px solid gray;
+    --background: #000;
+    height: 26px;
+    width: 100%;
+}

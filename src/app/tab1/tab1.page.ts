@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpServiceService } from '../services/http-service.service';
 
 @Component({
@@ -8,21 +8,20 @@ import { HttpServiceService } from '../services/http-service.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-
   data: any = [];
   counter = 1;
+  records = 30;
 
-  constructor(private httpService: HttpServiceService) {
-    this.httpService.getFeeds(this.counter).subscribe((response: any) => {
+  constructor(private httpService: HttpServiceService, private router: Router) {
+    this.httpService.getFeeds(this.counter, this.records).subscribe((response: any) => {
         this.data = response.results;
     });
   }
 
   loadData(event) {
+    console.log(event);
     this.counter += 1;
-    this.httpService.getFeeds(this.counter).subscribe((response: any) => {
+    this.httpService.getFeeds(this.counter, this.records).subscribe((response: any) => {
       this.data = this.data.concat(response.results);
     });
   }
@@ -33,6 +32,10 @@ export class Tab1Page {
     } else {
       this.data[index].likes = 1;
     }
+  }
+
+  openUserProfile() {
+    this.router.navigate(['tabs/user-profile']);
   }
 
 }

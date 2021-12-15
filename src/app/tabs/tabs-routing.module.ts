@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'tab3',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+      },
+      {
+        path: 'user-profile',
+        loadChildren: () => import('../user-profile/user-profile.module').then(m => m.UserProfileModule)
       },
       {
         path: '',
